@@ -37,3 +37,8 @@ Thumbs.db
 *.njsproj
 *.sln
 *.sw?
+
+# Media (keep binaries out of git; use LFS or external hosting)
+src/videos/*.mp4
+src/videos/*.mov
+src/videos/*.webm
