@@ -28,8 +28,8 @@ function Home() {
 
       {/* MAIN CONTENT */}
       <MainContent
-        cardData={data.cardData} // Pass the complete list
-        searchTerm={searchTerm} // Pass the current search term
+        cardData={data.cardData} 
+        searchTerm={searchTerm} 
       />
 
       {/* FOOTER */}
