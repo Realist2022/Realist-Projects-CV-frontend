@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './TopNav.module.css';
-import logo from '../images/SonnyTaparaLogo.png';
+import logo from '../../public/images/SonnyTaparaLogo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin, faGithub, faYoutube } from '@fortawesome/free-brands-svg-icons'; // added faYoutube

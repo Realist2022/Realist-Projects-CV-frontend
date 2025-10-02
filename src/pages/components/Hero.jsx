@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Hero.module.css";
-import heroVideo from "../../videos/Hero_video.mp4"; 
-import fullStackBadge from "../../images/Full_Stack_Circle_Badge.png";
-import fullStackBadge2 from "../../images/Full_Stack_Circle_Badge2.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTurnDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTurnDown } from '@fortawesome/free-solid-svg-icons';
 
 // Import searchTerm and handleSearchChange as props
 function Hero({ searchTerm, handleSearchChange }) {
@@ -53,8 +50,9 @@ function Hero({ searchTerm, handleSearchChange }) {
   return (
     // HERO CONTAINER
     <div className={styles.heroContainer}>
+      {/* HERO BACKGROUND VIDEO */}
       <video
-        src={heroVideo}
+        src="/videos/Hero_video.mp4"
         className={styles.heroVideo}
         autoPlay
         loop
@@ -107,7 +105,7 @@ function Hero({ searchTerm, handleSearchChange }) {
         rel="noreferrer"
       >
         <img
-          src={fullStackBadge}
+          src="/images/Full_Stack_Circle_Badge.png"
           className={styles.fullStackBadge}
           alt="Full Stack Developer Badge"
           onMouseEnter={() => setIsHovered(true)}
@@ -132,7 +130,7 @@ function Hero({ searchTerm, handleSearchChange }) {
         rel="noreferrer"
       >
         <img
-          src={fullStackBadge2}
+          src="/images/Full_Stack_Circle_Badge2.png"
           className={styles.fullStackBadge2}
           alt="Full Stack Developer Badge 2"
           onMouseEnter={() => setIsBadge2Hovered(true)}
