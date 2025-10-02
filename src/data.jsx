@@ -1,6 +1,7 @@
 import aiChatbotVideo from './videos/AI_Chatbot.mp4';
 import metricManVideo from './videos/Metric_Man_Poses_and_Salutes.mp4';
 import zStationVideo from './videos/Z_station_map_locater.mp4';
+import ballTossVideo from './videos/Ball_Toss_and_Return_Video.mp4';
 
 const data = {
   cardData: [
@@ -16,7 +17,7 @@ const data = {
       title: "Website projects",
       description:
         "I built this website for our Touch team in the lead-up to Nationals. It served as a quick reference for our set plays and strategies, helping teammates refresh their memory on the go. It was a fun way to combine tech with team spirit — and make sure no one forgot the moves mid-game!",
-      video: "/videos/Ball_Toss_and_Return_Video.mp4",
+      video: ballTossVideo,
       website: "https://realist2022.github.io/Touch-Moves-Webpage/",
       links: [
         { label: "Touch Moves Website", url: "https://realist2022.github.io/Touch-Moves-Webpage/" }
