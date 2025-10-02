@@ -1,6 +1,6 @@
-
 import aiChatbotVideo from './videos/AI_Chatbot.mp4';
 import metricManVideo from './videos/Metric_Man_Poses_and_Salutes.mp4';
+import zStationVideo from './videos/Z_station_map_locater.mp4';
 
 const data = {
   cardData: [
@@ -10,7 +10,6 @@ const data = {
       description:
         "To level up my interview prep, I created a custom AI chatbot using React, Node.js, Express, and Google AI Studio. It let me rehearse answers, get instant feedback, and build confidence — all through a tool I coded myself. It was like having a coach I could tweak and train.",
       video: aiChatbotVideo,
-      website: "https://youtu.be/D8pBg92bsQk",
     },
     {
       id: 2,
@@ -19,6 +18,9 @@ const data = {
         "I built this website for our Touch team in the lead-up to Nationals. It served as a quick reference for our set plays and strategies, helping teammates refresh their memory on the go. It was a fun way to combine tech with team spirit — and make sure no one forgot the moves mid-game!",
       video: "/videos/Ball_Toss_and_Return_Video.mp4",
       website: "https://realist2022.github.io/Touch-Moves-Webpage/",
+      links: [
+        { label: "Touch Moves Website", url: "https://realist2022.github.io/Touch-Moves-Webpage/" }
+      ],
     },
     {
       id: 3,
@@ -27,6 +29,10 @@ const data = {
         "Beginning of my journey with web development. This was some of my projects that I have done using HTML, CSS and JavaScript.",
       image: "/src/images/SonnyPeaceOut.jpg",
       website: "https://realist2022.github.io/html-CSS-personal-portfolio/",
+      links: [
+        { label: "HTML/CSS Project", url: "https://realist2022.github.io/html-CSS-personal-portfolio/" },
+        { label: "HTML Project", url: "https://realist2022.github.io/html-personal-portfolio/" }
+      ],
     },
     {
       id: 4,
@@ -38,38 +44,41 @@ const data = {
     },
     {
       id: 5,
-      title: "Full Stack Developer",
+      title: "Professional Certifications",
       description:
-        "My professional certifications and credentials that demonstrate my expertise and commitment to continuous learning.",
-      iframe: "https://www.credential.net/6df45471-b9c8-44ec-adfe-e82f8b6a1929",
+        "A curated collection of certifications earned across full-stack development, AI enablement, and foundational programming skills.",
+      image: "/src/images/basic_python_cert.jpeg",
       website: "https://www.credential.net/6df45471-b9c8-44ec-adfe-e82f8b6a1929",
+      links: [
+        { label: "Full Stack Developer Credential", url: "https://www.credential.net/6df45471-b9c8-44ec-adfe-e82f8b6a1929" },
+        { label: "AI-Powered Advanced Full Stack Developer", url: "https://www.credential.net/c8f3f305-6593-4c34-b92b-75e416436ec3" },
+        { label: "Tech Career Launchpad Credential", url: "https://www.credential.net/d00b707e-be23-4410-9876-b94540e7e645" },
+        { label: "Python Basics Portfolio", url: "https://realist2022.github.io/html-personal-portfolio/" }
+      ],
     },
     {
       id: 6,
-      title: "AI-Powered Advanced Full Stack Developer",
+      title: "Snake Game (Browser Edition)",
       description:
-        "Professional certification showcasing my expertise and achievements in the field.",
-      iframe:
-        "https://www.credential.net/embed/c8f3f305-6593-4c34-b92b-75e416436ec3",
-      website: "https://www.credential.net/c8f3f305-6593-4c34-b92b-75e416436ec3",
+        "Arrow keys control this canvas-based port of my Python Snake — grab food, grow longer, and avoid the walls or yourself.",
+      component: "snake",
     },
     {
       id: 7,
-      title: "Tech Career Launchpad",
+      title: "Z App Project",
       description:
-        "Advanced AI certification demonstrating proficiency in artificial intelligence technologies and implementation.",
-      iframe:
-        "https://www.credential.net/embed/d00b707e-be23-4410-9876-b94540e7e645",
-      website: "https://www.credential.net/d00b707e-be23-4410-9876-b94540e7e645",
+        "The Z App uses React for the frontend with Google Maps integration, and Node.js/Express for the backend. Data is stored in MongoDB Atlas, accessed via Mongoose. The stack also includes tools like GitHub for collaboration, and JIRA for workflow management. This setup enables interactive mapping, real-time search, and efficient team development.",
+      video: zStationVideo,
+      // website: "https://realist2022.github.io/html-personal-portfolio/",
     },
     {
       id: 8,
-      title: "Python Basics",
+      title: "AI Image recognition",
       description:
-        "Professional certification showcasing my expertise and achievements in the field.",
+        "This project involved building an AI image recognition system using Python and TensorFlow. The system was trained on a diverse dataset to accurately identify and classify images into various categories. Key features included data preprocessing, model training, and evaluation, resulting in a robust application capable of real-time image analysis.",
       image:
-        "/src/images/basic_python_cert.jpeg",
-      website: "https://realist2022.github.io/html-personal-portfolio/",
+        "/src/images/Insurance_guestimator.png",
+      website: "https://youtu.be/D8pBg92bsQk",
     },
   ],
 };

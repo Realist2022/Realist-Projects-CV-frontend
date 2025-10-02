@@ -16,6 +16,7 @@
   position: absolute;
   width: 70%;
   padding: 20px;
+  z-index: 2;
 }
 
 .heroSubTitle {
@@ -41,6 +42,16 @@
   height: 100vh;
   object-fit: cover;
   filter: brightness(50%);
+}
+
+.heroVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1; 
 }
 
 .heroInput {
@@ -76,7 +87,7 @@
   width: 200px;
   height: 200px;
   object-fit: contain;
-  z-index: 2;
+  z-index: 4; 
   opacity: 0.9;
   transition: opacity 0.3s ease, transform 0.3s ease;
   cursor: pointer;
@@ -93,7 +104,7 @@
   width: 150px;
   height: 150px;
   object-fit: contain;
-  z-index: 2;
+  z-index: 6; 
   opacity: 0.8;
   transition: opacity 0.3s ease, transform 0.3s ease;
   cursor: pointer;
@@ -168,12 +179,10 @@
     font-size: 0.9rem;
   }
 
-  /* This hides font awesome search bar icon */
   .FontAwesomeIconButton {
     display: none;
   }
 
-  /* This shows red search button with writing */
   .searchButton {
     margin-top: 10px;
     margin-bottom: 20px;
@@ -201,7 +210,6 @@
   }
 }
 
-/* This hides the red search button with writing */
 @media (min-width: 500px) {
   .searchButton {
     display: none;

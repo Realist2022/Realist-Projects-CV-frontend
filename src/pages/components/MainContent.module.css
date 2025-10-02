@@ -13,6 +13,8 @@ body {
   gap: 50px;
   padding: 50px 0;
   background-color: rgba(0, 0, 0, 0.3); /* Black with 30% opacity */
+  position: relative;
+  overflow: hidden; /* Hide overflow to clip the glow effect */
 }
 
 .cardDivs {
@@ -26,6 +28,7 @@ body {
   overflow: hidden; /* Ensures content stays within rounded corners */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative; /* Make card a positioning context for the tooltip */
+  z-index: 1; /* Raise stacking order to keep cards above the glow */
 }
 
 .cardDivs:hover {
@@ -174,6 +177,43 @@ video.cardImage {
   scroll-margin-top: 80px;
 }
 
+.cardComponentWrapper {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  border-bottom: 1px solid rgba(255, 40, 0, 0.25);
+}
+
+.cursorGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 260px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(140px at center, rgba(255, 40, 0, 0.7), rgba(255, 40, 0, 0));
+  filter: blur(14px);
+}
+
+.globalCursorGlow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 360px;
+  height: 360px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(180px at center, rgba(255, 40, 0, 0.4), rgba(255, 40, 0, 0));
+  filter: blur(22px);
+  transition: opacity 0.25s ease;
+  mix-blend-mode: screen;
+  z-index: 0; /* or -1 if your layout allows */
+}
+
 @media (max-width: 600px) {
   .cardContainer {
     flex-direction: column;
@@ -196,8 +236,20 @@ video.cardImage {
     height: 250px; 
   }
 
+  .cardComponentWrapper {
+    height: 250px;
+  }
+
   #mainContent,
   [class*="cardContainer"] {
     scroll-margin-top: 60px;
+  }
+
+  .cursorGlow {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+
+  .globalCursorGlow {
+    transform: translate(-50%, -50%) scale(0.85);
   }
 }
