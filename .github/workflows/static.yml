@@ -52,7 +52,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload dist folder (Vite build output)
-          path: './dist'
+          path: './vite-project/dist'
           
       - name: Deploy to GitHub Pages
         id: deployment
