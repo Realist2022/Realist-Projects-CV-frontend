@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import styles from "./Hero.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTurnDown } from '@fortawesome/free-solid-svg-icons';
@@ -9,6 +9,8 @@ function Hero({ searchTerm, handleSearchChange }) {
   const [isMobile, setIsMobile] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [isBadge2Hovered, setIsBadge2Hovered] = useState(false);
+  const videoRef = useRef(null);
+  const [showVideoControls, setShowVideoControls] = useState(false);
 
   // Handle scroll event and window resize
   useEffect(() => {
@@ -47,18 +49,39 @@ function Hero({ searchTerm, handleSearchChange }) {
     scrollToMainContent();
   };
 
+  useEffect(() => {
+    // Try to autoplay; if it fails (iOS/Low Power Mode), show controls
+    const v = videoRef.current;
+    if (!v) return;
+    const tryPlay = async () => {
+      try {
+        await v.play();
+        setShowVideoControls(false);
+      } catch {
+        setShowVideoControls(true);
+      }
+    };
+    // Ensure muted + inline for iOS
+    v.muted = true;
+    v.playsInline = true;
+    tryPlay();
+  }, []);
+
   return (
     // HERO CONTAINER
     <div className={styles.heroContainer}>
       {/* HERO BACKGROUND VIDEO */}
       <video
+        ref={videoRef}
         src="videos/Hero_video.mp4"
         className={styles.heroVideo}
         autoPlay
         loop
         muted
         playsInline
-        alt="Hero Background Video"
+        preload="metadata"
+        controls={showVideoControls}
+        // alt is ignored on <video>, keep as comment if needed
       />
 
       {/* HERO CONTENT */}

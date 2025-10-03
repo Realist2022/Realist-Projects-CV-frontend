@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styles from './TopNav.module.css';
-// import logo from '../../public/images/SonnyTaparaLogo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin, faGithub, faYoutube } from '@fortawesome/free-brands-svg-icons'; // added faYoutube
@@ -24,7 +23,7 @@ function TopNav() {
     <div className={styles.navbar}>
 
       {/* LOGO */}
-      <img src={logoSrc} className={styles.logo} alt="Company Logo" />
+      <img src={logoSrc} className={styles.logo} alt="Personal Branding" />
 
       {/* HAMBURGER/XMARK MENU ICON */}
       <div className={styles["menu-icon"]} onClick={toggleMenu}> 
