@@ -52,7 +52,7 @@ function Hero({ searchTerm, handleSearchChange }) {
     <div className={styles.heroContainer}>
       {/* HERO BACKGROUND VIDEO */}
       <video
-        src="/videos/Hero_video.mp4"
+        src="videos/Hero_video.mp4"
         className={styles.heroVideo}
         autoPlay
         loop
@@ -105,7 +105,7 @@ function Hero({ searchTerm, handleSearchChange }) {
         rel="noreferrer"
       >
         <img
-          src="/images/Full_Stack_Circle_Badge.png"
+          src="images/Full_Stack_Circle_Badge.png"
           className={styles.fullStackBadge}
           alt="Full Stack Developer Badge"
           onMouseEnter={() => setIsHovered(true)}
@@ -130,7 +130,7 @@ function Hero({ searchTerm, handleSearchChange }) {
         rel="noreferrer"
       >
         <img
-          src="/images/Full_Stack_Circle_Badge2.png"
+          src="images/Full_Stack_Circle_Badge2.png"
           className={styles.fullStackBadge2}
           alt="Full Stack Developer Badge 2"
           onMouseEnter={() => setIsBadge2Hovered(true)}

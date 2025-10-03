@@ -1,8 +1,14 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// https://vite.dev/config/
 export default defineConfig({
   base: '/Realist-Projects-CV-frontend/', 
   plugins: [react()],
-})
+  base: '/Realist-Projects-CV-frontend/', // GitHub Pages repo name
+  build: {
+    outDir: 'dist',
+  },
+  server: {
+    open: true,
+  },
+});
