@@ -26,6 +26,7 @@
   font-weight: 400;
   font-style: normal;
   text-shadow: 2px 2px 4px #000000;
+  animation: slideInLeft 1400ms ease-out 200ms both;
 }
 
 .heroTitle {
@@ -35,6 +36,7 @@
   color: white;
   font-style: normal;
   text-shadow: 2px 2px 4px #000000;
+  animation: slideInRight 1600ms ease-out 400ms both;
 }
 
 .heroImage {
@@ -213,5 +215,36 @@
 @media (min-width: 500px) {
   .searchButton {
     display: none;
+  }
+}
+
+/* Slide-in animations */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-500px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Accessibility: disable on reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .heroSubTitle,
+  .heroTitle {
+    animation: none !important;
   }
 }

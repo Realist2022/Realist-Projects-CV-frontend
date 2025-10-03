@@ -1,25 +1,7 @@
 const data = {
   cardData: [
-    {
+        {
       id: 1,
-      title: "AI Chat Bot",
-      description:
-        "To level up my interview prep, I created a custom AI chatbot using React, Node.js, Express, and Google AI Studio. It let me rehearse answers, get instant feedback, and build confidence — all through a tool I coded myself. It was like having a coach I could tweak and train.",
-      video: "videos/AI_Chatbot.mp4",
-    },
-    {
-      id: 2,
-      title: "Website projects",
-      description:
-        "I built this website for our Touch team in the lead-up to Nationals. It served as a quick reference for our set plays and strategies, helping teammates refresh their memory on the go. It was a fun way to combine tech with team spirit — and make sure no one forgot the moves mid-game!",
-      video: "videos/Ball_Toss_and_Return_Video.mp4", // <-- use this if file is in public/videos/
-      website: "https://realist2022.github.io/Touch-Moves-Webpage/",
-      links: [
-        { label: "Touch Moves Website", url: "https://realist2022.github.io/Touch-Moves-Webpage/" }
-      ],
-    },
-    {
-      id: 3,
       title: "HTML/CSS/JS Projects",
       description:
         "Beginning of my journey with web development. This was some of my projects that I have done using HTML, CSS and JavaScript.",
@@ -30,13 +12,35 @@ const data = {
         { label: "HTML Project", url: "https://realist2022.github.io/html-personal-portfolio/" }
       ],
     },
+        {
+      id: 2,
+      title: "Foodstuffs work experience",
+      description:
+        "This was my 10 week work experience at Foodstuffs. I learned a lot about dealing with big data sets and integrating with various technologies.",
+      video: "videos/Metric_Man_Poses_and_Salutes.mp4",
+      poster: "images/Foodstuffs_project.png",
+      website: "https://youtu.be/mesa6q1y6Oo",
+      links: [
+        { label: "YouTube Work Experience Video", url: "https://youtu.be/mesa6q1y6Oo" }
+      ],
+    },
+    {
+      id: 3,
+      title: "AI Chat Bot",
+      description:
+        "To level up my interview prep, I created a custom AI chatbot using React, Node.js, Express, and Google AI Studio. It let me rehearse answers, get instant feedback, and build confidence — all through a tool I coded myself. It was like having a coach I could tweak and train.",
+      video: "videos/AI_Chatbot.mp4",
+    },
     {
       id: 4,
-      title: "10 week work experience.",
+      title: "Website projects",
       description:
-        "This was my 10 week work experience at Metricon. I was in the IT department and I got to learn a lot about how the IT department works.",
-      video: "videos/Metric_Man_Poses_and_Salutes.mp4",
-      website: "https://youtu.be/mesa6q1y6Oo",
+        "I built this website for our Touch team in the lead-up to Nationals. It served as a quick reference for our set plays and strategies, helping teammates refresh their memory on the go. It was a fun way to combine tech with team spirit — and make sure no one forgot the moves mid-game!",
+      video: "videos/Ball_Toss_and_Return_Video.mp4", // <-- use this if file is in public/videos/
+      website: "https://realist2022.github.io/Touch-Moves-Webpage/",
+      links: [
+        { label: "Touch Moves Website", url: "https://realist2022.github.io/Touch-Moves-Webpage/" }
+      ],
     },
     {
       id: 5,
