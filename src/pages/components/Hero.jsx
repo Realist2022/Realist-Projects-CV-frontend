@@ -88,7 +88,7 @@ function Hero({ searchTerm, handleSearchChange }) {
       <div className={styles.heroContent}>
         <p className={styles.heroSubTitle}>
           <b>
-            <i>Personal Website CV</i>
+            <i>Personal Portfolio Website</i>
           </b>
         </p>
         <h1 className={styles.heroTitle}>Sonny Tapara</h1>

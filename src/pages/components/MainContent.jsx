@@ -107,6 +107,7 @@ function MainContent({ cardData, searchTerm }) {
                 <video
                   className={styles.cardImage}
                   src={item.video}
+                  poster={item.poster /* shows first if provided */}
                   controls
                   playsInline
                   preload="metadata"
