@@ -44,9 +44,9 @@ const data = {
     },
     {
       id: 5,
-      title: "Professional Certifications",
+      title: "Qualifications/Certificates",
       description:
-        "A curated collection of certifications earned across full-stack development, AI enablement, and foundational programming skills.",
+        "A curated collection of Qualifications earned across the full-stack development, AI enablement, and foundational programming skills.",
       image: "images/basic_python_cert.jpeg",
       website: "https://www.credential.net/6df45471-b9c8-44ec-adfe-e82f8b6a1929",
       links: [
@@ -75,9 +75,12 @@ const data = {
       id: 8,
       title: "AI Image recognition",
       description:
-        "This project involved building an AI image recognition system using Python and TensorFlow. The system was trained on a diverse dataset to accurately identify and classify images into various categories. Key features included data preprocessing, model training, and evaluation, resulting in a robust application capable of real-time image analysis.",
-      image: "images/Insurance_guestimator.png",
+        "This project involved building an AI image recognition system using Azure custom vision to identify and classify images into various categories. Key features included data preprocessing, model training, and evaluation, resulting in a robust application capable of real-time image analysis.",
+      image: "images/AI_truck.jpg",
       website: "https://youtu.be/D8pBg92bsQk",
+      links: [
+        { label: "YouTube AI Image Recognition Video", url: "https://youtu.be/D8pBg92bsQk" }
+      ],
     },
   ],
 };
