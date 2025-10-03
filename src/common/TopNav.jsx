@@ -18,6 +18,7 @@ function TopNav() {
   }
 
   const logoSrc = "images/SonnyTaparaLogo.png";
+  const cvHref = "docs/SonnyTapara_CV.pdf"; 
 
   return (
     <div className={styles.navbar}>
@@ -37,8 +38,15 @@ function TopNav() {
       {/* TOP NAV CONTENT AND LOGIN */}
       <div className={`${styles.navAndContact} ${isOpen ? styles.open : ''}`}>
         <a href="#home" onClick={closeMenu}>Home</a>
-        <a href="https://1drv.ms/w/c/80bee8cbb66edcbc/EbNwh_O5UlFFtaY5HmHSqOkBd_VnLucXpqFuMjzGZxgdrg?e=AgzRAq" onClick={closeMenu}>CV</a>
-        <a href="#about" onClick={closeMenu}>Links</a> 
+        <a
+          href={cvHref}
+          onClick={closeMenu}
+          download="SonnyTapara_CV.pdf"
+          type="application/pdf"
+        >
+          CV
+        </a>
+        <a href="#about" onClick={closeMenu}>About</a> 
         <a href="https://www.linkedin.com/in/sonny-tapara-245481170/" target="_blank" rel="noreferrer" onClick={closeMenu}>
           <FontAwesomeIcon icon={faLinkedin} />
         </a>
