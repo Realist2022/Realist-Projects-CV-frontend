@@ -48,6 +48,11 @@ const data = {
       description:
         "A curated collection of Qualifications earned across the full-stack development, AI enablement, and foundational programming skills.",
       image: "images/basic_python_cert.jpeg",
+      carouselImages: [
+        "images/Full_Stack_Circle_Badge.png",
+        "images/Full_Stack_Circle_Badge2.png",
+        "images/basic_python_cert.jpeg",
+      ],
       website: "https://www.credential.net/6df45471-b9c8-44ec-adfe-e82f8b6a1929",
       links: [
         { label: "Full Stack Developer Credential", url: "https://www.credential.net/6df45471-b9c8-44ec-adfe-e82f8b6a1929" },
