@@ -92,33 +92,6 @@ function Hero({ searchTerm, handleSearchChange }) {
           </b>
         </p>
         <h1 className={styles.heroTitle}>Sonny Tapara</h1>
-        {/* SEARCH INPUT FIELD */}
-        <form onSubmit={handleSearchSubmit}>
-          <input
-            className={styles.heroInput}
-            type="text"
-            placeholder="Search..."
-            // Use the searchTerm prop for the value
-            value={searchTerm}
-            // Use the handleSearchChange prop for the onChange event
-            onChange={handleSearchChange}
-          />
-          {/* FONT AWESOME SEARCH BUTTON ICON */}
-          <button
-            type="submit"
-            className={styles.FontAwesomeIconButton}
-            aria-label="Search"
-          >
-            <FontAwesomeIcon
-              icon={faTurnDown}
-              className={styles.FontAwesomeIcon}
-            />
-          </button>
-          {/* SEARCH BUTTON WITH WRITING */}
-          <button type="submit" className={styles.searchButton}>
-            Search
-          </button>
-        </form>
       </div>
 
       {/* FULL STACK BADGE ON RIGHT SIDE */}

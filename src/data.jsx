@@ -1,52 +1,26 @@
 const data = {
   cardData: [
-        {
+    {
       id: 1,
-      title: "HTML/CSS/JS Projects",
+      title: "Personal Websites (HTML/CSS/JS)",
       description:
-        "Beginning of my journey with web development. This was some of my projects that I have done using HTML, CSS and JavaScript.",
-      image: "images/SonnyPeaceOut.jpg",
-      website: "https://realist2022.github.io/html-CSS-personal-portfolio/",
+        "At the start of my web development journey, I built these websites using HTML, CSS, and JavaScript. One was for our Touch team ahead of Nationals, giving teammates a quick way to review set plays and strategies on the go. Each project was a chance to experiment, learn, and see how code could bring ideas — and even team spirit — to life.",
+      video: "videos/Ball_Toss_and_Return_Video.mp4",
+      website: "https://realist2022.github.io/Touch-Moves-Webpage/",
       links: [
-        { label: "HTML/CSS Project", url: "https://realist2022.github.io/html-CSS-personal-portfolio/" },
-        { label: "HTML Project", url: "https://realist2022.github.io/html-personal-portfolio/" }
+        { label: "Touch Moves Website", url: "https://realist2022.github.io/Touch-Moves-Webpage/" },
+        { label: "HTML/CSS Portfolio", url: "https://realist2022.github.io/html-CSS-personal-portfolio/" },
+        { label: "Vanilla JS Projects", url: "https://realist2022.github.io/html-personal-portfolio/" }
+      ],
+      techStack: [
+        "HTML","CSS","JavaScript","Bootstrap","Responsive Design"
       ],
     },
         {
       id: 2,
-      title: "Foodstuffs work experience",
-      description:
-        "This was my 10 week work experience at Foodstuffs. I learned a lot about dealing with big data sets and integrating with various technologies.",
-      video: "videos/Metric_Man_Poses_and_Salutes.mp4",
-      poster: "images/Foodstuffs_project.png",
-      website: "https://youtu.be/mesa6q1y6Oo",
-      links: [
-        { label: "YouTube Work Experience Video", url: "https://youtu.be/mesa6q1y6Oo" }
-      ],
-    },
-    {
-      id: 3,
-      title: "AI Chat Bot",
-      description:
-        "To level up my interview prep, I created a custom AI chatbot using React, Node.js, Express, and Google AI Studio. It let me rehearse answers, get instant feedback, and build confidence — all through a tool I coded myself. It was like having a coach I could tweak and train.",
-      video: "videos/AI_Chatbot.mp4",
-    },
-    {
-      id: 4,
-      title: "Website projects",
-      description:
-        "I built this website for our Touch team in the lead-up to Nationals. It served as a quick reference for our set plays and strategies, helping teammates refresh their memory on the go. It was a fun way to combine tech with team spirit — and make sure no one forgot the moves mid-game!",
-      video: "videos/Ball_Toss_and_Return_Video.mp4", // <-- use this if file is in public/videos/
-      website: "https://realist2022.github.io/Touch-Moves-Webpage/",
-      links: [
-        { label: "Touch Moves Website", url: "https://realist2022.github.io/Touch-Moves-Webpage/" }
-      ],
-    },
-    {
-      id: 5,
       title: "Qualifications/Certificates",
       description:
-        "A curated collection of Qualifications earned across the full-stack development, AI enablement, and foundational programming skills.",
+        "Curated set of credentials across full-stack development, AI enablement, and foundational programming.",
       image: "images/basic_python_cert.jpeg",
       carouselImages: [
         "images/Full_Stack_Circle_Badge.png",
@@ -60,32 +34,58 @@ const data = {
         { label: "Tech Career Launchpad Credential", url: "https://www.credential.net/d00b707e-be23-4410-9876-b94540e7e645" },
         { label: "Python Basics Portfolio", url: "https://realist2022.github.io/html-personal-portfolio/" }
       ],
+      techStack: ["Qualifications", "Certificates", "Skills"],
     },
+    {
+      id: 3,
+      title: "Foodstuffs Work Experience (10 weeks)",
+      description:
+        "10-week data-focused experience: integrated REST APIs and cloud storage with Node.js, and prototyped Power BI dashboards on BigQuery datasets.",
+      video: "videos/Metric_Man_Poses_and_Salutes.mp4",
+      poster: "images/Foodstuffs_project.png",
+      website: "https://youtu.be/mesa6q1y6Oo",
+      links: [
+        { label: "YouTube Work Experience Video", url: "https://youtu.be/mesa6q1y6Oo" }
+      ],
+      techStack: ["Power BI", "REST APIs", "Google Cloud Storage", "Big Query", "Node.js", "SonarQube", "Cortex", "Bamboo", "Big Data Sets"],
+    },
+    {
+      
+      id: 4,
+      title: "AI Chat Bot",
+      description:
+        "Custom AI chatbot (React, Node.js, Express, Google AI Studio) for interview prep: rehearse answers, get instant feedback, and iterate.",
+      video: "videos/AI_Chatbot.mp4",
+      techStack: ["React", "Node.js", "Express.js", "Google AI Studio", "REST APIs"],
+    },
+
     {
       id: 6,
       title: "Snake Game (Browser Edition)",
       description:
-        "Arrow keys control this canvas-based port of my Python Snake — grab food, grow longer, and avoid the walls or yourself.",
+        "Canvas-based Snake rebuilt for the browser. Arrow keys to play; simple, responsive, and performant.",
       component: "snake",
+      techStack: ["HTML5 Canvas", "JavaScript ES6+"],
     },
     {
       id: 7,
       title: "Z App Project",
       description:
-        "The Z App uses React for the frontend with Google Maps integration, and Node.js/Express for the backend. Data is stored in MongoDB Atlas, accessed via Mongoose. The stack also includes tools like GitHub for collaboration, and JIRA for workflow management. This setup enables interactive mapping, real-time search, and efficient team development.",
+        "React + Google Maps frontend with Node.js/Express APIs and MongoDB Atlas. Interactive mapping and real-time search with a collaborative workflow.",
       video: "videos/Z_station_map_locater.mp4",
-      // website: "https://realist2022.github.io/html-personal-portfolio/",
+      techStack: ["React", "Node.js", "Express", "MongoDB", "Mongoose", "Google Maps API"],
     },
     {
       id: 8,
-      title: "AI Image recognition",
+      title: "AI Image Recognition",
       description:
-        "This project involved building an AI image recognition system using Azure custom vision to identify and classify images into various categories. Key features included data preprocessing, model training, and evaluation, resulting in a robust application capable of real-time image analysis.",
+        "Azure Custom Vision project to classify images in real time. Includes dataset prep, model training/evaluation, and a simple REST integration.",
       image: "images/AI_truck.jpg",
       website: "https://youtu.be/D8pBg92bsQk",
       links: [
         { label: "YouTube AI Image Recognition Video", url: "https://youtu.be/D8pBg92bsQk" }
       ],
+      techStack: ["Azure", "React", "Express.js", "Multer", "Azure Custom Vision", "REST APIs"],
     },
   ],
 };

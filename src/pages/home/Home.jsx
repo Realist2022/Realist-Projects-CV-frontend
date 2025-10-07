@@ -1,10 +1,11 @@
 import Hero from "../components/Hero.jsx";
+import AboutSection from "../components/AboutSection.jsx";
 import TopNav from "../../common/TopNav.jsx";
 import MainContent from "../components/MainContent.jsx";
 import { useState } from "react";
 import data from "../../data.jsx"; 
 import Footer from "../../common/Footer.jsx";
-import SkillsScroll from "../components/SkillsScroll.jsx";
+// import SkillsScroll from "../components/SkillsScroll.jsx";
 
 function Home() {
   // State to hold the search term
@@ -23,8 +24,8 @@ function Home() {
       {/* HERO */}
       <Hero searchTerm={searchTerm} handleSearchChange={handleSearchChange} />
 
-      {/* SKILLS SCROLL */}
-      <SkillsScroll />
+      {/* ABOUT SECTION */}
+      <AboutSection />
 
       {/* MAIN CONTENT */}
       <MainContent
