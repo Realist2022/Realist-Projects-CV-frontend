@@ -2,20 +2,26 @@ import React, { useState } from 'react';
 import styles from './TopNav.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
-import { faLinkedin, faGithub, faYoutube } from '@fortawesome/free-brands-svg-icons'; // added faYoutube
+import { faLinkedin, faGithub, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import EmailModal from '../components/EmailModal';
 
 function TopNav() {
   const [isOpen, setIsOpen] = useState(false);
+  const [showEmailModal, setShowEmailModal] = useState(false);
+  const phone = '0211428396';
 
   // OPEN MENU FUNCTION
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  }
+  const toggleMenu = () => setIsOpen(v => !v);
 
   // CLOSE MENU FUNCTION
   const closeMenu = () => {
     setIsOpen(false);
-  }
+  };
+
+  const openEmail = () => {
+    closeMenu();
+    setShowEmailModal(true);
+  };
 
   const logoSrc = "images/SonnyTaparaLogo.png";
   const cvHref = "docs/SonnyTapara_CV.pdf"; 
@@ -42,7 +48,6 @@ function TopNav() {
           href={cvHref}
           onClick={closeMenu}
           download="SonnyTapara_CV.pdf"
-          type="application/pdf"
         >
           CV
         </a>
@@ -58,8 +63,11 @@ function TopNav() {
         </a>
         
         {/* CONTACT BUTTON */}
-        <button className={styles.contactButton}>Contact Me</button>
+        <button className={styles.contactButton} onClick={openEmail}>Contact Me</button>
       </div>
+
+      {/* Email Modal */}
+      <EmailModal isOpen={showEmailModal} onClose={() => setShowEmailModal(false)} phone={phone} />
     </div>
   )
 }
