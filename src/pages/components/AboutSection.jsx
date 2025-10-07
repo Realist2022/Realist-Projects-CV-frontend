@@ -139,7 +139,7 @@ function AboutSection() {
                 <div className={styles.skillsList}>
                   <span className={styles.skillBadge}>React</span>
                   <span className={styles.skillBadge}>JavaScript ES6+</span>
-                  <span className={styles.skillBadge}>TypeScript</span>
+                  <span className={styles.skillBadge}>Bootstrap</span>
                   <span className={styles.skillBadge}>HTML5</span>
                   <span className={styles.skillBadge}>CSS3</span>
                   <span className={styles.skillBadge}>Responsive Design</span>

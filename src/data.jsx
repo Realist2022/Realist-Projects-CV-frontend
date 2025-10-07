@@ -60,7 +60,7 @@ const data = {
     },
 
     {
-      id: 6,
+      id: 5,
       title: "Snake Game (Browser Edition)",
       description:
         "Canvas-based Snake rebuilt for the browser. Arrow keys to play; simple, responsive, and performant.",
@@ -68,7 +68,7 @@ const data = {
       techStack: ["HTML5 Canvas", "JavaScript ES6+"],
     },
     {
-      id: 7,
+      id: 6,
       title: "Z App Project",
       description:
         "React + Google Maps frontend with Node.js/Express APIs and MongoDB Atlas. Interactive mapping and real-time search with a collaborative workflow.",
@@ -76,12 +76,12 @@ const data = {
       techStack: ["React", "Node.js", "Express", "MongoDB", "Mongoose", "Google Maps API"],
     },
     {
-      id: 8,
+      id: 7,
       title: "AI Image Recognition",
       description:
         "Azure Custom Vision project to classify images in real time. Includes dataset prep, model training/evaluation, and a simple REST integration.",
       image: "images/AI_truck.jpg",
-      website: "https://youtu.be/D8pBg92bsQk",
+      webste: "https://youtu.be/D8pBg92bsQk",
       links: [
         { label: "YouTube AI Image Recognition Video", url: "https://youtu.be/D8pBg92bsQk" }
       ],
