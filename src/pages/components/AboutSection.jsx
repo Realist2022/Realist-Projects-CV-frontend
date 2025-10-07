@@ -111,19 +111,20 @@ function AboutSection() {
           <h3 className={styles.sectionTitle}>My Story</h3>
           <div className={styles.bioContent}>
             <AnimatedOnScroll flipOnReenter>
-              <p>
-                I'm a passionate full-stack developer with expertise in modern web technologies
-                and a proven track record of delivering scalable, user-centric applications. My journey
-                in software development began with curiosity for problem-solving and has evolved into
-                expertise across the entire development lifecycle.
-              </p>
-            </AnimatedOnScroll>
-            <AnimatedOnScroll flipOnReenter delay={100}>
-              <p>
-                During my internship at Foodstuffs, I gained valuable experience working with enterprise-level
-                systems, handling large datasets, and collaborating with cross-functional teams. This experience
-                taught me the importance of clean, maintainable code and efficient database design.
-              </p>
+<p>
+            I'm a full-stack developer whose journey began not just with code, but with a deep curiosity
+            for solving tangible problems. My background in electronics and systems engineering
+            gives me a unique, diagnostic mindset that I now apply to architecting secure, scalable
+            software from the ground up.
+          </p>
+        </AnimatedOnScroll>
+        <AnimatedOnScroll flipOnReenter delay={100}>
+          <p>
+            Through intensive, project-based training at **Mission Ready**, I translated this hands-on
+            experience into a professional software development skill set. This foundation was invaluable
+            when engineering resilient data pipelines at Foodstuffs and building fully automated systems
+            with MicroPython. I thrive on turning complex challenges into clean, efficient, and user-centric applications.
+          </p>
             </AnimatedOnScroll>
           </div>
         </div>
