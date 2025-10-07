@@ -4,11 +4,13 @@ body {
   background-color: #1a1a1a; /* Dark background for context */
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden; /* <-- FIX: Prevents horizontal scrollbar */
 }
 
 .mainContentSection {
   padding: 60px 0 40px 0;
   background: rgba(0,0,0,0.2);
+  position: relative; /* Needed for the local cursorGlow to position correctly */
 }
 
 .mainContentTitle {
@@ -19,43 +21,6 @@ body {
   margin-bottom: 32px;
   text-shadow: 2px 2px 8px #000;
   letter-spacing: 1px;
-}
-
-.filterBar {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 40px;
-}
-
-.filterLabel {
-  font-size: 1.1rem;
-  color: #fff;
-  margin-right: 10px;
-  font-weight: 500;
-
-}
-
-.filterButton {
-  background: rgba(255, 40, 0, 0.1);
-  color: rgb(255, 40, 0);
-  border: 1px solid rgb(255, 40, 0);
-  border-radius: 18px;
-  padding: 7px 18px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s, transform 0.1s;
-  margin: 2px;
-}
-
-.filterButton.active,
-.filterButton:hover {
-  background: rgb(255, 40, 0);
-  color: #fff;
-  transform: translateY(-2px);
 }
 
 .cardContainer {
@@ -89,16 +54,16 @@ body {
 }
 
 .cardImage { /* This class is now used for both <img> and <video> */
-  width: 100%; /* Changed to 100% to be responsive within the card */
+  width: 100%;
   height: 300px;
-  object-fit: contain; /* avoid cropping to black; show full frame */
-  border-radius: 0; /* Top corners are sharp */
+  object-fit: contain;
+  border-radius: 0;
   display: block;
   position: relative;
-  background-color: #000; /* ensure visible area even before playback */
+  background-color: #000;
 }
 
-.cardIframe { /* New class for iframe elements - matches cardImage exactly */
+.cardIframe {
   width: 100%;
   height: 300px;
   border: none;
@@ -142,14 +107,14 @@ body {
   opacity: 0.9;
 }
 
-/* Play overlay for video (shows ▶ when paused; hidden when playing) */
+/* Play overlay for video */
 .cardDivs::before {
   content: "";
   position: absolute;
-  top: 0;                 /* limit overlay to media area */
+  top: 0;
   left: 0;
   right: 0;
-  height: 300px;          /* same as .cardImage height on desktop */
+  height: 300px;
   display: grid;
   place-items: center;
   color: white;
@@ -160,34 +125,23 @@ body {
   z-index: 11;
 }
 
-/* Subtle indicator when video is paused */
 .cardDivs:has(video.cardImage:paused)::before {
   content: "▶";
   opacity: 0.65;
 }
 
-/* Hide indicator when playing (if :playing supported) */
 .cardDivs:has(video.cardImage:playing)::before {
   opacity: 0;
 }
 
-/* Tweak video interaction feel */
 video.cardImage {
   user-select: none;
   -webkit-user-select: none;
   -webkit-tap-highlight-color: transparent;
-  background-color: #000; /* ensure visible area even before playback */
+  background-color: #000;
 }
 
-/* Disable hover tooltips and overlays on touch devices */
-@media (hover: none) {
-  .cardDivs::after,
-  .cardDivs::before {
-    display: none;
-  }
-}
-
-.cardTitle{
+.cardTitle {
   font-size: 1.6rem;
   color: rgb(255, 40, 0);
   font-weight: 700;
@@ -201,57 +155,8 @@ video.cardImage {
   color: #222;
   font-weight: 500;
   text-align: left;
-  margin: 0 20px 20px 20px; 
-  min-height: 60px; 
-}
-
-.websiteLink {
-  display: inline-block;
-  background-color: rgb(255, 40, 0);
-  color: white;
-  text-decoration: none;
-  padding: 10px 22px;
   margin: 0 20px 20px 20px;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: background 0.3s, transform 0.2s;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(255, 40, 0, 0.2);
-}
-
-.websiteLink:hover {
-  background-color: rgb(220, 35, 0);
-  transform: translateY(-2px) scale(1.04);
-  box-shadow: 0 6px 16px rgba(255, 40, 0, 0.3);
-}
-
-.linkItem {
-  /* match .websiteLink visual style */
-  display: inline-block;
-  background-color: rgb(255, 40, 0);
-  color: white;
-  text-decoration: none;
-  padding: 10px 22px;
-  border: none;                       /* remove outline border */
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(255, 40, 0, 0.2);
-}
-
-.linkItem:hover {
-  background-color: rgb(220, 35, 0);
-  color: #fff;
-  transform: translateY(-2px) scale(1.04);
-  box-shadow: 0 6px 16px rgba(255, 40, 0, 0.3);
-}
-
-#mainContent,
-[class*="cardContainer"] {
-  scroll-margin-top: 80px;
+  min-height: 60px;
 }
 
 .cardComponentWrapper {
@@ -264,254 +169,10 @@ video.cardImage {
   border-bottom: 1px solid rgba(255, 40, 0, 0.25);
 }
 
-.cursorGlow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 260px;
-  height: 260px;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(140px at center, rgba(255, 40, 0, 0.7), rgba(255, 40, 0, 0));
-  filter: blur(14px);
-}
-
-.globalCursorGlow {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 360px;
-  height: 360px;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(180px at center, rgba(255, 40, 0, 0.4), rgba(255, 40, 0, 0));
-  filter: blur(22px);
-  transition: opacity 0.25s ease;
-  mix-blend-mode: screen;
-  z-index: 0; /* or -1 if your layout allows */
-}
-
-@media (max-width: 600px) {
-  .mainContentSection {
-    padding: 30px 0 20px 0;
-  }
-
-  .mainContentTitle {
-    font-size: 1.5rem;
-    margin-bottom: 18px;
-    text-shadow: 1px 1px 4px #000;
-  }
-
-  .techScrollBarWrapper {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    gap: 12px;
-    width: min(100%, 900px);
-    margin: 0 auto 38px auto;
-    padding: 0 12px;
-  }
-
-  .techScrollBar {
-    max-width: 100%;
-    gap: 4px;
-    padding: 6px 0;
-    min-width: 0;
-    flex: unset; /* allow the grid column to handle sizing */
-    scroll-behavior: smooth;              /* smooth arrow/JS scrolling */
-    overscroll-behavior-inline: contain;  /* keep horizontal scroll contained */
-    -webkit-overflow-scrolling: touch;    /* better feel on mobile */
-  }
-
-  .scrollArrow {
-    width: 30px;
-    height: 30px;
-    min-width: 30px;
-    min-height: 30px;
-    font-size: 0.95rem;
-  }
-
-  .cardContainer {
-    align-items: center;
-    gap: 18px;
-    padding: 10px 0;
-    /* overflow: visible; */
-  }
-
-  .cardDivs {
-    width: 96vw;
-    max-width: 370px;
-    margin: 12px 0;
-    border-radius: 10px;
-    box-shadow: 0 0 10px 3px rgba(255, 40, 0, 0.5);
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .cardImage,
-  .carousel,
-  .cardComponentWrapper,
-  .cardIframe {
-    height: 200px;
-    min-height: 160px;
-    max-height: 220px;
-  }
-
-  .cardTitle {
-    font-size: 1.1rem;
-    margin: 14px 14px 7px 14px;
-    text-align: center;
-  }
-
-  .cardContent {
-    font-size: 0.95rem;
-    margin: 0 14px 14px 14px;
-    min-height: 40px;
-    text-align: center;
-  }
-
-  .techStack {
-    gap: 4px;
-    margin: 8px 14px 8px 14px;
-  }
-
-  .techBadge {
-    font-size: 0.75rem;
-    padding: 3px 7px;
-    border-radius: 10px;
-  }
-
-  .metrics {
-    margin: 8px 14px;
-    padding: 7px 10px;
-    font-size: 0.85rem;
-    border-radius: 4px;
-  }
-
-  .metricsTitle {
-    font-size: 0.95rem;
-    margin-bottom: 3px;
-  }
-
-  .websiteLink {
-    padding: 8px 14px;
-    margin: 0 14px 14px 14px;
-    font-size: 0.95rem;
-    border-radius: 5px;
-    box-shadow: 0 1px 4px rgba(255, 40, 0, 0.15);
-  }
-
-  .linksList {
-    gap: 6px;
-    margin: 8px 14px 14px 14px;
-  }
-
-  .linkItem {
-    /* match .websiteLink visual style */
-    display: inline-block;
-    background-color: rgb(255, 40, 0);
-    color: white;
-    text-decoration: none;
-    padding: 10px 22px;
-    border: none;                       /* remove outline border */
-    border-radius: 6px;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
-    text-align: center;
-    box-shadow: 0 2px 8px rgba(255, 40, 0, 0.2);
-  }
-
-  .linkItem:hover {
-    background-color: rgb(220, 35, 0);
-    color: #fff;
-    transform: translateY(-2px) scale(1.04);
-    box-shadow: 0 6px 16px rgba(255, 40, 0, 0.3);
-  }
-
-  .techScrollBarWrapper {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    gap: 12px;
-    width: min(100%, 900px);
-    margin: 0 auto 38px auto;
-    padding: 0 12px;
-  }
-
-  .techScrollBar {
-    display: flex;
-    overflow-x: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    gap: 8px;
-    padding: 8px 0;
-    background: transparent;
-    border-radius: 18px;
-    min-width: 0;
-    flex: unset; /* allow the grid column to handle sizing */
-    scroll-behavior: smooth;              /* smooth arrow/JS scrolling */
-    overscroll-behavior-inline: contain;  /* keep horizontal scroll contained */
-    -webkit-overflow-scrolling: touch;    /* better feel on mobile */
-  }
-
-  .techScrollBar::-webkit-scrollbar {
-    display: none;
-  }
-
-  .techScrollItem {
-    background: rgba(255, 40, 0, 0.08);
-    color: rgb(255, 40, 0);
-    border: 1px solid rgb(255, 40, 0);
-    border-radius: 18px;
-    padding: 7px 18px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s, color 0.2s, transform 0.1s;
-    margin: 2px 0;
-    white-space: nowrap;
-    user-select: none;
-  }
-
-  .techScrollItem.active,
-  .techScrollItem:hover {
-    background: rgb(255, 40, 0);
-    color: #fff;
-    transform: translateY(-2px);
-  }
-
-  .scrollArrow {
-    background: rgba(255, 40, 0, 0.15);
-    color: rgb(255, 40, 0);
-    border: none;
-    border-radius: 50%;
-    width: 42px;
-    height: 42px;
-    min-width: 42px;
-    min-height: 42px;
-    font-size: 1.3rem;
-    font-weight: bold;
-    cursor: pointer;
-    margin: 0 6px;
-    transition: background 0.2s, color 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .scrollArrow:hover {
-    background: rgb(255, 40, 0);
-    color: #fff;
-  }
-}
-
 .carousel {
   position: relative;
   width: 100%;
-  height: 300px; /* match .cardImage height */
+  height: 300px;
   overflow: hidden;
   background: #000;
   border-bottom: 1px solid rgba(255, 40, 0, 0.25);
@@ -525,7 +186,7 @@ video.cardImage {
 .carouselImg {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* consistent with .cardImage */
+  object-fit: contain;
   display: block;
   background: #000;
 }
@@ -538,7 +199,7 @@ video.cardImage {
   transform: translateY(-50%);
   display: flex;
   justify-content: space-between;
-  pointer-events: none; /* let only buttons receive events */
+  pointer-events: none;
 }
 
 .carouselArrow {
@@ -580,6 +241,18 @@ video.cardImage {
   border-radius: 12px;
   font-size: 0.85rem;
   font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.techBadge:hover {
+    background: rgb(255, 40, 0);
+    color: #fff;
+}
+
+.techBadge.active {
+    background: rgb(255, 40, 0);
+    color: #fff;
 }
 
 .metrics {
@@ -606,13 +279,12 @@ video.cardImage {
 }
 
 .linkItem {
-  /* match .websiteLink visual style */
   display: inline-block;
   background-color: rgb(255, 40, 0);
   color: white;
   text-decoration: none;
   padding: 10px 22px;
-  border: none;                       /* remove outline border */
+  border: none;
   border-radius: 6px;
   font-weight: 600;
   font-size: 1rem;
@@ -636,6 +308,7 @@ video.cardImage {
   width: min(100%, 900px);
   margin: 0 auto 38px auto;
   padding: 0 12px;
+  box-sizing: border-box;
 }
 
 .techScrollBar {
@@ -648,10 +321,10 @@ video.cardImage {
   background: transparent;
   border-radius: 18px;
   min-width: 0;
-  flex: unset; /* allow the grid column to handle sizing */
-  scroll-behavior: smooth;              /* smooth arrow/JS scrolling */
-  overscroll-behavior-inline: contain;  /* keep horizontal scroll contained */
-  -webkit-overflow-scrolling: touch;    /* better feel on mobile */
+  flex: unset;
+  scroll-behavior: smooth;
+  overscroll-behavior-inline: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 .techScrollBar::-webkit-scrollbar {
@@ -702,4 +375,144 @@ video.cardImage {
 .scrollArrow:hover {
   background: rgb(255, 40, 0);
   color: #fff;
+}
+
+#mainContent,
+[class*="cardContainer"] {
+  scroll-margin-top: 80px;
+}
+
+.cursorGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 260px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(140px at center, rgba(255, 40, 0, 0.7), rgba(255, 40, 0, 0));
+  filter: blur(14px);
+}
+
+.globalCursorGlow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 360px;
+  height: 360px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(180px at center, rgba(255, 40, 0, 0.4), rgba(255, 40, 0, 0));
+  filter: blur(22px);
+  transition: opacity 0.25s ease;
+  mix-blend-mode: screen;
+  z-index: 0;
+}
+
+@media (hover: none) {
+  .cardDivs::after,
+  .cardDivs::before {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .mainContentSection {
+    padding: 30px 0 20px 0;
+  }
+
+  .mainContentTitle {
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+    text-shadow: 1px 1px 4px #000;
+  }
+
+  .techScrollBarWrapper {
+    gap: 8px; /* Tighter gap on mobile */
+  }
+  
+  .scrollArrow {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    min-height: 30px;
+    font-size: 0.95rem;
+  }
+
+  .cardContainer {
+    align-items: center;
+    gap: 18px;
+    padding: 10px 0;
+  }
+
+  .cardDivs {
+    width: 96vw;
+    max-width: 370px;
+    margin: 12px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 3px rgba(255, 40, 0, 0.5);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cardImage,
+  .carousel,
+  .cardComponentWrapper,
+  .cardIframe {
+    height: 200px;
+    min-height: 160px;
+    max-height: 220px;
+  }
+
+  .cardTitle {
+    font-size: 1.1rem;
+    margin: 14px 14px 7px 14px;
+    text-align: center;
+  }
+
+  .cardContent {
+    font-size: 0.95rem;
+    margin: 0 14px 14px 14px;
+    min-height: 40px;
+    text-align: center;
+  }
+
+  .techStack {
+    gap: 4px;
+    margin: 8px 14px 8px 14px;
+    justify-content: center;
+  }
+
+  .techBadge {
+    font-size: 0.75rem;
+    padding: 3px 7px;
+    border-radius: 10px;
+  }
+
+  .metrics {
+    margin: 8px 14px;
+    padding: 7px 10px;
+    font-size: 0.85rem;
+    border-radius: 4px;
+  }
+
+  .metricsTitle {
+    font-size: 0.95rem;
+    margin-bottom: 3px;
+  }
+
+  .linksList {
+    gap: 6px;
+    margin: 8px 14px 14px 14px;
+    justify-content: center;
+  }
+
+  .linkItem {
+    padding: 8px 14px;
+    font-size: 0.95rem;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px rgba(255, 40, 0, 0.15);
+  }
 }

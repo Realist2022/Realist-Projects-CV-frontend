@@ -70,7 +70,7 @@ function MainContent({ searchTerm }) {
       />
       <div
         id="mainContent"
-        className={styles.cardContainer}
+        className={styles.mainContentSection}
         onMouseMove={handleGlowMove}
         onMouseLeave={handleGlowLeave}
       >
@@ -80,14 +80,14 @@ function MainContent({ searchTerm }) {
         />
         <h2 className={styles.mainContentTitle}>Featured Projects & Experience</h2>
 
-        {/* Tech Scroll Bar (extracted) */}
+        {/* Tech Scroll Bar (always stacked under title) */}
         <TechScrollBar
           filters={filters}
           selectedFilter={selectedFilter}
           onSelect={setSelectedFilter}
         />
 
-        {/* Cards */}
+        {/* Cards grid stays the same */}
         <div className={styles.cardContainer}>
           {filteredCards.map((item) => (
             <ProjectCard
