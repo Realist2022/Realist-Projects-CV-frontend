@@ -168,7 +168,7 @@ function AboutSection() {
                   <span className={styles.skillBadge}>Git/GitHub</span>
                   <span className={styles.skillBadge}>Azure</span>
                   <span className={styles.skillBadge}>VS Code</span>
-                  <span className={styles.skillBadge}>Figma</span>
+                  <span className={styles.skillBadge}>Googl Cloud Platform</span>
                   <span className={styles.skillBadge}>JIRA</span>
                   <span className={styles.skillBadge}>DevOps</span>
                 </div>
