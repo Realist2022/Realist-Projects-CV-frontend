@@ -14,10 +14,18 @@ function Footer() {
 
   return (
     <div>
-      <footer className={Styles.footer} >
-        <p>© 2025 Sonny Tapara. All rights reserved.</p>
-        <p>Privacy Policy | Terms of Service</p>
-        <button onClick={scrollToTop} className={Styles.scrollButton} ><FontAwesomeIcon icon={faArrowUp} /></button>
+      <footer className={Styles.footer}>
+        <div className={Styles.footerContent}>
+          <p>© 2025 Sonny Tapara. All rights reserved.</p>
+          <p>Privacy Policy | Terms of Service</p>
+        </div>
+        <button
+          onClick={scrollToTop}
+          className={Styles.scrollButton}
+          aria-label="Scroll to top"
+        >
+          <FontAwesomeIcon icon={faArrowUp} />
+        </button>
       </footer>
     </div>
   )

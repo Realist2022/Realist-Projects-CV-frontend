@@ -62,6 +62,15 @@ function MainContent({ searchTerm }) {
 
   const onTagClick = (tech) => setSelectedFilter(prev => (prev === tech ? '' : tech));
 
+  // ✅ ADDED: New handler for tags inside project cards
+  const handleCardTagClick = (tech) => {
+    // First, apply the filter logic
+    onTagClick(tech);
+
+    // Then, scroll the main content section into view
+    document.getElementById('mainContent')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <>
       <span
@@ -84,7 +93,8 @@ function MainContent({ searchTerm }) {
         <TechScrollBar
           filters={filters}
           selectedFilter={selectedFilter}
-          onSelect={setSelectedFilter}
+          // ✅ UPDATED: Use the toggle function for consistency
+          onSelect={onTagClick}
         />
 
         {/* Cards grid stays the same */}
@@ -94,7 +104,7 @@ function MainContent({ searchTerm }) {
               key={item.id}
               item={item}
               selectedFilter={selectedFilter}
-              onTagClick={onTagClick}
+              onTagClick={handleCardTagClick}
             />
           ))}
         </div>

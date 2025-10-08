@@ -1,12 +1,16 @@
-import React from 'react';
-import styles from './MainContent.module.css';
-import SnakeGame from './SnakeGame';
-import Carousel from './Carousel';
+import React from "react";
+import styles from "./MainContent.module.css";
+import SnakeGame from "./SnakeGame";
+import Carousel from "./Carousel";
 
 export default function ProjectCard({ item, selectedFilter, onTagClick }) {
   const media = (() => {
-    if (item.component === 'snake') {
-      return <div className={styles.cardComponentWrapper}><SnakeGame /></div>;
+    if (item.component === "snake") {
+      return (
+        <div className={styles.cardComponentWrapper}>
+          <SnakeGame />
+        </div>
+      );
     }
     if (item.carouselImages && item.carouselImages.length) {
       return <Carousel images={item.carouselImages} altBase={item.title} />;
@@ -24,10 +28,24 @@ export default function ProjectCard({ item, selectedFilter, onTagClick }) {
       );
     }
     if (item.image) {
-      return <img className={styles.cardImage} src={item.image} alt={item.title} loading="lazy" />;
+      return (
+        <img
+          className={styles.cardImage}
+          src={item.image}
+          alt={item.title}
+          loading="lazy"
+        />
+      );
     }
     if (item.iframe) {
-      return <iframe className={styles.cardIframe} src={item.iframe} title={item.title} allowFullScreen />;
+      return (
+        <iframe
+          className={styles.cardIframe}
+          src={item.iframe}
+          title={item.title}
+          allowFullScreen
+        />
+      );
     }
     return null;
   })();
@@ -44,7 +62,9 @@ export default function ProjectCard({ item, selectedFilter, onTagClick }) {
             <button
               key={idx}
               type="button"
-              className={`${styles.techBadge} ${selectedFilter === tech ? styles.active : ''}`}
+              className={`${styles.techBadge} ${
+                selectedFilter === tech ? styles.active : ""
+              }`}
               onClick={() => onTagClick(tech)}
               aria-pressed={selectedFilter === tech}
               title={`Filter by ${tech}`}
@@ -59,7 +79,10 @@ export default function ProjectCard({ item, selectedFilter, onTagClick }) {
         <div className={styles.metrics}>
           <div className={styles.metricsTitle}>Key Results:</div>
           {item.metrics && <div>• {item.metrics}</div>}
-          {item.achievements && item.achievements.map((achievement, idx) => (<div key={idx}>• {achievement}</div>))}
+          {item.achievements &&
+            item.achievements.map((achievement, idx) => (
+              <div key={idx}>• {achievement}</div>
+            ))}
           {item.impact && <div>• {item.impact}</div>}
         </div>
       )}
@@ -67,12 +90,23 @@ export default function ProjectCard({ item, selectedFilter, onTagClick }) {
       {(item.links?.length || item.website) && (
         <div className={styles.linksList}>
           {item.links?.map((link, idx) => (
-            <a key={idx} className={styles.linkItem} href={link.url} target="_blank" rel="noreferrer">
+            <a
+              key={idx}
+              className={styles.linkItem}
+              href={link.url}
+              target="_blank"
+              rel="noreferrer"
+            >
               {link.label}
             </a>
           ))}
           {!item.links?.length && item.website && (
-            <a className={styles.linkItem} href={item.website} target="_blank" rel="noreferrer">
+            <a
+              className={styles.linkItem}
+              href={item.website}
+              target="_blank"
+              rel="noreferrer"
+            >
               Website
             </a>
           )}
