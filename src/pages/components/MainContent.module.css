@@ -11,6 +11,10 @@ body {
   padding: 60px 0 40px 0;
   background: rgba(0,0,0,0.2);
   position: relative; /* Needed for the local cursorGlow to position correctly */
+  width: 100%;
+  max-width: 100vw;         /* clamp to viewport */
+  box-sizing: border-box;
+  overflow-x: clip;         /* clip any horizontal bleed */
 }
 
 .mainContentTitle {
@@ -32,6 +36,9 @@ body {
   background-color: rgba(0, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
+  width: 100%;
+  max-width: 100vw;         /* clamp to viewport */
+  box-sizing: border-box;
 }
 
 .cardDivs {
@@ -390,8 +397,9 @@ video.cardImage {
   height: 260px;
   pointer-events: none;
   transform: translate(-50%, -50%);
-  background: radial-gradient(140px at center, rgba(255, 40, 0, 0.7), rgba(255, 40, 0, 0));
-  filter: blur(14px);
+  background: radial-gradient(140px at center, rgba(255, 40, 0, 0.35), rgba(255, 40, 0, 0));
+  filter: blur(8px); /* was 14px, now lighter */
+  opacity: 0.7;      /* was default, now lighter */
 }
 
 .globalCursorGlow {
@@ -402,8 +410,9 @@ video.cardImage {
   height: 360px;
   pointer-events: none;
   transform: translate(-50%, -50%);
-  background: radial-gradient(180px at center, rgba(255, 40, 0, 0.4), rgba(255, 40, 0, 0));
-  filter: blur(22px);
+  background: radial-gradient(180px at center, rgba(255, 40, 0, 0.18), rgba(255, 40, 0, 0));
+  filter: blur(12px); /* was 22px, now lighter */
+  opacity: 0.5;       /* was default, now lighter */
   transition: opacity 0.25s ease;
   mix-blend-mode: screen;
   z-index: 0;
@@ -418,7 +427,8 @@ video.cardImage {
 
 @media (max-width: 600px) {
   .mainContentSection {
-    padding: 30px 0 20px 0;
+    padding: 0px 0 20px 0;
+    width: 100vw;
   }
 
   .mainContentTitle {
@@ -443,6 +453,8 @@ video.cardImage {
     align-items: center;
     gap: 18px;
     padding: 10px 0;
+    width: 100%;
+    max-width: 100vw;
   }
 
   .cardDivs {
