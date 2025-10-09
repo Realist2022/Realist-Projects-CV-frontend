@@ -18,6 +18,8 @@
   position: relative;
   box-shadow: 0 0 30px rgba(255, 40, 0, 0.3);
   color: white;
+  max-height: 90vh; 
+  overflow-y: auto;
 }
 
 .closeButton {
