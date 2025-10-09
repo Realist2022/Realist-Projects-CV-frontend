@@ -4,7 +4,7 @@ const data = {
       id: 1,
       title: "Hobbies & Projects",
       description:
-        "A rotating gallery of personal interests and side projects — from web experiments to tech explorations that keep skills sharp and creativity flowing.",
+        "A rotating gallery of personal passions and side projects — from greenhouse gardening and creative home decor to tech explorations in automation — all fueling curiosity, sharpening skills, and keeping creativity in motion.",
       carouselImages: [
         "images/BBQ.JPG",
         "images/Aquaponics.PNG",
@@ -15,12 +15,8 @@ const data = {
       ],
       links: [
         {
-          label: "HTML/CSS Portfolio",
-          url: "https://realist2022.github.io/html-CSS-personal-portfolio/",
-        },
-        {
-          label: "Vanilla JS Projects",
-          url: "https://realist2022.github.io/html-personal-portfolio/",
+          label: "Greenhouse youtube video",
+          url: "https://youtu.be/mZ6pkkDKlR0?si=rMmQS-Gg2SeBs1RX",
         },
       ],
       techStack: [
@@ -34,7 +30,7 @@ const data = {
 
     {
       id: 2,
-      title: "Qualifications/Certificates",
+      title: "Qualifications & Certificates",
       description:
         "Curated set of credentials across full-stack development, AI enablement, and foundational programming. Use the red buttons below to view each credential.",
 
