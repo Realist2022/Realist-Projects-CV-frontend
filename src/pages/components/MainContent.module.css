@@ -166,16 +166,6 @@ video.cardImage {
   min-height: 60px;
 }
 
-.cardComponentWrapper {
-  width: 100%;
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #000;
-  border-bottom: 1px solid rgba(255, 40, 0, 0.25);
-}
-
 .carousel {
   position: relative;
   width: 100%;
@@ -307,6 +297,12 @@ video.cardImage {
   color: #fff;
   transform: translateY(-2px) scale(1.04);
   box-shadow: 0 6px 16px rgba(255, 40, 0, 0.3);
+}
+
+/* MainContent.module.css */
+.linkItem.active {
+  background-color: rgb(150, 20, 0);
+  box-shadow: 0 6px 16px rgba(220, 35, 0, 0.3);
 }
 
 .techScrollBarWrapper {
@@ -474,7 +470,6 @@ video.cardImage {
 
   .cardImage,
   .carousel,
-  .cardComponentWrapper,
   .cardIframe {
     height: 200px;
     min-height: 160px;

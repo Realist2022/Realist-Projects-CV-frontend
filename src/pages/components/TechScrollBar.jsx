@@ -5,6 +5,7 @@ const escTech = (s) =>
   window.CSS && CSS.escape
     ? CSS.escape(s)
     : String(s).replace(/["\\]/g, "\\$&");
+    
 const findNearestNode = (track, tech) => {
   const nodes = track.querySelectorAll(`[data-tech="${escTech(tech)}"]`);
   if (!nodes.length) return null;
@@ -23,6 +24,7 @@ const findNearestNode = (track, tech) => {
   });
   return { node: best, trackRect };
 };
+
 const centerOnNode = (track, node, trackRect, smooth = true) => {
   if (!track || !node || !trackRect) return;
   const itemRect = node.getBoundingClientRect();
@@ -34,12 +36,14 @@ const centerOnNode = (track, node, trackRect, smooth = true) => {
   );
   track.scrollTo({ left: targetLeft, behavior: smooth ? "smooth" : "auto" });
 };
+
 const centerTech = (track, tech, smooth = true) => {
   if (!track || !tech) return;
   const res = findNearestNode(track, tech);
   if (!res) return;
   centerOnNode(track, res.node, res.trackRect, smooth);
 };
+
 const centerSecondAll = (track, smooth = true) => {
   if (!track) return;
   const nodes = track.querySelectorAll(`[data-tech="__ALL__"]`);
@@ -61,7 +65,6 @@ export default function TechScrollBar({ filters, selectedFilter, onSelect }) {
   const baseItems = useMemo(() => ["__ALL__", ...filters], [filters]);
   const loopItems = useMemo(() => [...baseItems, ...baseItems], [baseItems]);
 
-  // Initial and selection centering
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
@@ -78,7 +81,6 @@ export default function TechScrollBar({ filters, selectedFilter, onSelect }) {
     }
   }, [selectedFilter]);
 
-  // Re-center on page scroll (throttled)
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
@@ -111,6 +113,7 @@ export default function TechScrollBar({ filters, selectedFilter, onSelect }) {
 
     window.addEventListener("resize", onResize);
     window.addEventListener("scroll", onWindowScroll, { passive: true });
+    
     return () => {
       if (rafId) cancelAnimationFrame(rafId);
       window.removeEventListener("scroll", onWindowScroll);
@@ -145,9 +148,7 @@ export default function TechScrollBar({ filters, selectedFilter, onSelect }) {
               className={`${styles.techScrollItem} ${
                 isActive ? styles.active : ""
               }`}
-              onClick={() =>
-                onSelect(isAll ? "" : selectedFilter === tech ? "" : tech)
-              }
+              onClick={() => onSelect(isAll ? "" : tech)}
               role="button"
               aria-pressed={isActive}
               title={isAll ? "Show all" : `Filter by ${tech}`}

@@ -3,7 +3,7 @@ import styles from './TopNav.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin, faGithub, faYoutube } from '@fortawesome/free-brands-svg-icons';
-import EmailModal from '../components/EmailModal';
+import EmailModal from '../pages/components/EmailModal';
 
 function TopNav() {
   const [isOpen, setIsOpen] = useState(false);
