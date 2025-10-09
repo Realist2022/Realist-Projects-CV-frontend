@@ -7,13 +7,17 @@ import data from "../../data.jsx";
 import Footer from "../../common/Footer.jsx";
 
 function Home() {
-  // State to hold the search term
   const [searchTerm, setSearchTerm] = useState("");
+  // State to hold the URL of the credential clicked in the Hero
+  const [selectedCredentialUrl, setSelectedCredentialUrl] = useState(null);
 
-  // The function to update the searchTerm state
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
   };
+
+  // Find the certificate links to pass to the Hero component
+  const qualificationsData = data.cardData.find(card => card.id === 2);
+  const certificateLinks = qualificationsData ? qualificationsData.links : [];
 
   useEffect(() => {
     const bodyStyle = document.body.style;
@@ -46,14 +50,23 @@ function Home() {
       <TopNav />
 
       {/* HERO */}
-      <Hero searchTerm={searchTerm} handleSearchChange={handleSearchChange} />
+      <Hero
+        searchTerm={searchTerm}
+        handleSearchChange={handleSearchChange}
+        certificateLinks={certificateLinks}
+        onCredentialSelect={setSelectedCredentialUrl}
+      />
 
       {/* ABOUT SECTION */}
       <AboutSection />
 
       {/* MAIN CONTENT */}
       <main style={{ flex: 1, display: "flex", flexDirection: "column" }}>
-        <MainContent cardData={data.cardData} searchTerm={searchTerm} />
+        <MainContent
+          cardData={data.cardData}
+          searchTerm={searchTerm}
+          selectedCredentialUrl={selectedCredentialUrl}
+        />
       </main>
 
       {/* FOOTER */}

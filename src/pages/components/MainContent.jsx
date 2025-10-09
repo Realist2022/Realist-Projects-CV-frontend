@@ -4,7 +4,7 @@ import data from '../../data.jsx';
 import TechScrollBar from './TechScrollBar';
 import ProjectCard from './ProjectCard';
 
-function MainContent({ searchTerm }) {
+function MainContent({ searchTerm, selectedCredentialUrl }) {
   const [cursorGlow, setCursorGlow] = useState({ x: 0, y: 0, visible: false });
   const [globalGlow, setGlobalGlow] = useState({ x: 0, y: 0, visible: false });
 
@@ -42,7 +42,6 @@ function MainContent({ searchTerm }) {
     setCursorGlow((prev) => ({ ...prev, visible: false }));
   };
 
-  // Build tech filters
   const allTechs = useMemo(() => {
     const set = new Set();
     (data.cardData || []).forEach(card => (card.techStack || []).forEach(t => set.add(t)));
@@ -62,12 +61,8 @@ function MainContent({ searchTerm }) {
 
   const onTagClick = (tech) => setSelectedFilter(prev => (prev === tech ? '' : tech));
 
-  // ✅ ADDED: New handler for tags inside project cards
   const handleCardTagClick = (tech) => {
-    // First, apply the filter logic
     onTagClick(tech);
-
-    // Then, scroll the main content section into view
     document.getElementById('mainContent')?.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -88,16 +83,11 @@ function MainContent({ searchTerm }) {
           style={{ opacity: cursorGlow.visible ? 1 : 0, left: `${cursorGlow.x}px`, top: `${cursorGlow.y}px` }}
         />
         <h2 className={styles.mainContentTitle}>Featured Projects & Experience</h2>
-
-        {/* Tech Scroll Bar (always stacked under title) */}
         <TechScrollBar
           filters={filters}
           selectedFilter={selectedFilter}
-          // ✅ UPDATED: Use the toggle function for consistency
           onSelect={onTagClick}
         />
-
-        {/* Cards grid stays the same */}
         <div className={styles.cardContainer}>
           {filteredCards.map((item) => (
             <ProjectCard
@@ -105,6 +95,7 @@ function MainContent({ searchTerm }) {
               item={item}
               selectedFilter={selectedFilter}
               onTagClick={handleCardTagClick}
+              selectedCredentialUrl={selectedCredentialUrl}
             />
           ))}
         </div>
