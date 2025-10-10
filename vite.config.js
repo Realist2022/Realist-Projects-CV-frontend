@@ -10,4 +10,6 @@ export default defineConfig({
       targets: ['defaults', 'not IE 11']
     })
   ],
+  // ✅ Add this line
+  base: '/Realist-Projects-CV-frontend/',
 })
