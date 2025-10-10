@@ -120,7 +120,7 @@ function AboutSection() {
         </AnimatedOnScroll>
         <AnimatedOnScroll flipOnReenter delay={100}>
           <p>
-            Through intensive, project-based training at **Mission Ready**, I translated this hands-on
+            Through intensive, project-based training at Mission Ready, I translated this hands-on
             experience into a professional software development skill set. This foundation was invaluable
             when engineering resilient data pipelines at Foodstuffs and building fully automated systems
             with MicroPython. I thrive on turning complex challenges into clean, efficient, and user-centric applications.
@@ -142,6 +142,7 @@ function AboutSection() {
                   <span className={styles.skillBadge}>Bootstrap</span>
                   <span className={styles.skillBadge}>HTML5</span>
                   <span className={styles.skillBadge}>CSS3</span>
+                  <span className={styles.skillBadge}>Power BI</span>
                   <span className={styles.skillBadge}>Responsive Design</span>
                 </div>
               </div>
