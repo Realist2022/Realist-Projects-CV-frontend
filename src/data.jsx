@@ -39,15 +39,15 @@ const data = {
       links: [
         {
           label: "Full Stack Developer Credential",
-          url: "https://www.credential.net/embed/6df45471-b9c8-44ec-adfe-e82f8b6a1929",
+          image: "images/full_stack_dev.png",
         },
         {
           label: "AI-Powered Advanced Full Stack Developer",
-          url: "https://www.credential.net/embed/c8f3f305-6593-4c34-b92b-75e416436ec3",
+          image: "images/AI_full_stack_dev.png",
         },
         {
-          label: "Tech Career Launchpad Credential",
-          url: "https://www.credential.net/embed/d00b707e-be23-4410-9876-b94540e7e645",
+          label: "Tech Career Launchpad",
+          image: "images/tech_launchpad.png",
         },
         {
           label: "Python Basics Portfolio",
