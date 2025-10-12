@@ -58,9 +58,9 @@ const data = {
     },
     {
       id: 3,
-      title: "Foodstuffs Work Experience (10 weeks)",
+      title: "Foodstuffs Work Experience",
       description:
-        "10-week data-focused experience: integrated REST APIs and cloud storage with Node.js, and prototyped Power BI dashboards on BigQuery datasets.",
+        "Engineered an end-to-end data pipeline to provide Foodstuffs with key metric insights for cortex scorecards and power BI dashboards. I developed the solution in Node.js, containerized it with Docker, and wrote the deployment configurations for Kubernetes.",
       video: "videos/Metric_Man_Poses_and_Salutes.mp4",
       poster: "images/Foodstuffs_project.png",
       website: "https://youtu.be/mesa6q1y6Oo",
