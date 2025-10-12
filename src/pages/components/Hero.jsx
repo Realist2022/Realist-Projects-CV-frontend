@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import styles from "./Hero.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTurnDown } from '@fortawesome/free-solid-svg-icons';
+import BadgeModal from "./BadgeModal";
 
 // Import searchTerm and handleSearchChange as props
 function Hero({ searchTerm, handleSearchChange }) {
@@ -11,6 +12,12 @@ function Hero({ searchTerm, handleSearchChange }) {
   const [isBadge2Hovered, setIsBadge2Hovered] = useState(false);
   const videoRef = useRef(null);
   const [showVideoControls, setShowVideoControls] = useState(false);
+  const [modalState, setModalState] = useState({
+    isOpen: false,
+    badgeImage: '',
+    badgeTitle: '',
+    credentialLink: ''
+  });
 
   // Handle scroll event and window resize
   useEffect(() => {
@@ -49,6 +56,26 @@ function Hero({ searchTerm, handleSearchChange }) {
     scrollToMainContent();
   };
 
+  // Function to open badge modal
+  const openBadgeModal = (badgeImage, badgeTitle, credentialLink) => {
+    setModalState({
+      isOpen: true,
+      badgeImage,
+      badgeTitle,
+      credentialLink
+    });
+  };
+
+  // Function to close badge modal
+  const closeBadgeModal = () => {
+    setModalState({
+      isOpen: false,
+      badgeImage: '',
+      badgeTitle: '',
+      credentialLink: ''
+    });
+  };
+
   useEffect(() => {
     // Try to autoplay; if it fails (iOS/Low Power Mode), show controls
     const v = videoRef.current;
@@ -81,7 +108,6 @@ function Hero({ searchTerm, handleSearchChange }) {
         playsInline
         preload="metadata"
         controls={showVideoControls}
-        // alt is ignored on <video>, keep as comment if needed
       />
 
       {/* HERO CONTENT */}
@@ -95,10 +121,12 @@ function Hero({ searchTerm, handleSearchChange }) {
       </div>
 
       {/* FULL STACK BADGE ON RIGHT SIDE */}
-      <a
-        href="https://www.credential.net/c8f3f305-6593-4c34-b92b-75e416436ec3"
-        target="_blank"
-        rel="noreferrer"
+      <div
+        onClick={() => openBadgeModal(
+          "images/AI_full_stack_dev.png",
+          "AI & Full Stack Developer Badge",
+          "https://www.credential.net/c8f3f305-6593-4c34-b92b-75e416436ec3"
+        )}
       >
         <img
           src="images/Full_Stack_Circle_Badge.png"
@@ -117,13 +145,15 @@ function Hero({ searchTerm, handleSearchChange }) {
             transition: "transform 0.3s ease",
           }}
         />
-      </a>
+      </div>
 
       {/* SECOND FULL STACK BADGE BELOW THE FIRST */}
-      <a
-        href="https://www.credential.net/6df45471-b9c8-44ec-adfe-e82f8b6a1929"
-        target="_blank"
-        rel="noreferrer"
+      <div
+        onClick={() => openBadgeModal(
+          "images/full_stack_dev.png",
+          "Full Stack Developer Badge",
+          "https://www.credential.net/6df45471-b9c8-44ec-adfe-e82f8b6a1929"
+        )}
       >
         <img
           src="images/Full_Stack_Circle_Badge2.png"
@@ -145,7 +175,16 @@ function Hero({ searchTerm, handleSearchChange }) {
             transition: "transform 0.3s ease, z-index 0.1s ease",
           }}
         />
-      </a>
+      </div>
+
+      {/* BADGE MODAL */}
+      <BadgeModal
+        isOpen={modalState.isOpen}
+        onClose={closeBadgeModal}
+        badgeImage={modalState.badgeImage}
+        badgeTitle={modalState.badgeTitle}
+        credentialLink={modalState.credentialLink}
+      />
     </div>
   );
 }
