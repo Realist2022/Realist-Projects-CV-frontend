@@ -1,7 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
 import styles from "./Hero.module.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTurnDown } from '@fortawesome/free-solid-svg-icons';
 import BadgeModal from "./BadgeModal";
 
 // Import searchTerm and handleSearchChange as props
@@ -123,13 +121,13 @@ function Hero({ searchTerm, handleSearchChange }) {
       {/* FULL STACK BADGE ON RIGHT SIDE */}
       <div
         onClick={() => openBadgeModal(
-          "images/AI_full_stack_dev.png",
+          "images/Professional_AI_Cert.png",
           "AI & Full Stack Developer Badge",
-          "https://www.credential.net/c8f3f305-6593-4c34-b92b-75e416436ec3"
+          "https://www.credential.net/47a52567-e69a-4c79-8ec6-0c7baf7b3d72#acc.TyrmBbUw"
         )}
       >
         <img
-          src="images/Full_Stack_Circle_Badge.png"
+          src="images/Professional_AI_Badge.png"
           className={styles.fullStackBadge}
           alt="Full Stack Developer Badge"
           onMouseEnter={() => setIsHovered(true)}

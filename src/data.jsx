@@ -38,13 +38,18 @@ const data = {
       defaultIframeIndex: 0,
       links: [
         {
-          label: "Full Stack Developer Credential",
-          image: "images/full_stack_dev.png",
+          label: "PROFESSIONAL AI-Powered Full Stack Developer",
+          image: "images/Professional_AI_Cert.png",
         },
         {
           label: "AI-Powered Advanced Full Stack Developer",
           image: "images/AI_full_stack_dev.png",
         },
+        {
+          label: "Full Stack Developer Credential",
+          image: "images/full_stack_dev.png",
+        },
+
         {
           label: "Tech Career Launchpad",
           image: "images/tech_launchpad.png",
@@ -81,7 +86,7 @@ const data = {
         "Cortex",
         "Bamboo",
         "Big Data Sets",
-        "Agile Methodologies"
+        "Agile Methodologies",
       ],
     },
 
@@ -175,7 +180,7 @@ const data = {
         "REST APIs",
         "Jira",
         "GitHub",
-        "Agile Methodologies"
+        "Agile Methodologies",
       ],
     },
     {
