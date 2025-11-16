@@ -38,6 +38,10 @@ const data = {
       defaultIframeIndex: 0,
       links: [
         {
+          label: "DIPLOMA AI-Powered Full Stack Developer",
+          image: "images/Professional_AI_Cert_Diploma.png",
+        },
+        {
           label: "PROFESSIONAL AI-Powered Full Stack Developer",
           image: "images/Professional_AI_Cert.png",
         },
@@ -59,7 +63,7 @@ const data = {
           image: "images/basic_python_cert.jpeg",
         },
       ],
-      techStack: ["Qualifications", "Certificates", "Skills"],
+      techStack: ["Qualifications", "Certificates", "Skills", "Diploma"],
     },
     {
       id: 3,

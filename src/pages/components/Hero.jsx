@@ -121,7 +121,7 @@ function Hero({ searchTerm, handleSearchChange }) {
       {/* FULL STACK BADGE ON RIGHT SIDE */}
       <div
         onClick={() => openBadgeModal(
-          "images/Professional_AI_Cert.png",
+          "images/Professional_AI_Cert_Diploma.png",
           "AI & Full Stack Developer Badge",
           "https://www.credential.net/47a52567-e69a-4c79-8ec6-0c7baf7b3d72#acc.TyrmBbUw"
         )}
