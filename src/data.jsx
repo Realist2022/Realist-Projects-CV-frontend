@@ -32,7 +32,7 @@ const data = {
       id: 2,
       title: "Qualifications & Certificates",
       description:
-        "Curated set of credentials across full-stack development, AI enablement, and foundational programming. Use the red buttons below to view each credential.",
+        "This collection of NZQA-approved qualifications showcases a robust skill set in full-stack development and AI enablement, from foundational (Level 4/5) learning up to a Level 6 Diploma. Each credential represents verifiable proficiency in technologies crucial for developing innovative, data-driven solutions. View the details below to understand my full scope of capabilities.",
 
       iframeControlledByLinks: true,
       defaultIframeIndex: 0,
