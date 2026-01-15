@@ -65,8 +65,37 @@ const data = {
       ],
       techStack: ["Qualifications", "Certificates", "Skills", "Diploma"],
     },
-    {
+        {
       id: 3,
+      title: "Growise APP",
+      description:
+        "Growise Born from a passion for cultivating high-yield crops like potatoes and Kūmara, Growise is a mobile gardening assistant designed to eliminate guesswork in the garden. By leveraging AI integration, the app provides users with precise, targeted planting schedules for specific edible plants. This full-stack project demonstrates my proficiency in React Native for mobile development and Firebase for backend management and hosting.",
+      image: "images/Growise_IOS.png",
+      links: [
+        {
+          label: "Growise App (Website Version)",
+          url: "https://youtu.be/13jQNGben08",
+        },
+                {
+          label: "Growise App (IOS Mobile Version)",
+          url: "https://youtube.com/shorts/Hirs7L8AYwM?feature=share",
+        },
+      ],
+      techStack: [
+        "React Native",
+        "Firebase",
+        "Firestore Database",
+        "Firebase storage",
+        "Firebase Authentication",
+        "Firebase Studio",
+        "Google Gemini AI",
+        "JavaScript",
+        "Mobile Development",
+        "Full-Stack Development",
+      ],
+    },
+    {
+      id: 4,
       title: "Foodstuffs Work Experience",
       description:
         "Engineered an end-to-end data pipeline to provide Foodstuffs with key metric insights for cortex scorecards and power BI dashboards. I developed the solution in Node.js, containerized it with Docker, and wrote the deployment configurations for Kubernetes.",
@@ -95,7 +124,7 @@ const data = {
     },
 
     {
-      id: 4,
+      id: 5,
       title: "Electronic Repairs",
       description:
         "Console-focused repairs and custom mods: HDMI/USB‑C port replacements, power/overheating fixes, controller stick‑drift repairs, SSD and cooling upgrades, firmware/config tweaks, and cosmetic/LED mods for PlayStation and Xbox.",
@@ -125,7 +154,7 @@ const data = {
     },
 
     {
-      id: 5,
+      id: 6,
       title: "Personal Websites (HTML/CSS/JS)",
       description:
         "At the start of my web development journey, I built these websites using HTML, CSS, and JavaScript. One was for our Touch team ahead of Nationals, giving teammates a quick way to review set plays and strategies on the go. Each project was a chance to experiment, learn, and see how code could bring ideas — and even team spirit — to life.",
@@ -155,7 +184,7 @@ const data = {
     },
 
     {
-      id: 6,
+      id: 7,
       title: "AI Chat Bot",
       description:
         "Custom AI chatbot (React, Node.js, Express, Google AI Studio) for interview prep: rehearse answers, get instant feedback, and iterate.",
@@ -169,7 +198,7 @@ const data = {
       ],
     },
     {
-      id: 7,
+      id: 8,
       title: "Z App Project",
       description:
         "React + Google Maps frontend with Node.js/Express APIs and MongoDB Atlas. Interactive mapping and real-time search with a collaborative workflow.",
@@ -188,7 +217,7 @@ const data = {
       ],
     },
     {
-      id: 8,
+      id: 9,
       title: "AI Image Recognition",
       description:
         "Azure Custom Vision project to classify images in real time. Includes dataset prep, model training/evaluation, and a simple REST integration.",
